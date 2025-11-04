@@ -40,7 +40,7 @@ public class Tramo {
     // Camión asignado al tramo
     @ManyToOne
     @JoinColumn(name = "camion_id")
-    private Camion camion;
+    private String camion;
 
     // Ruta a la que pertenece el tramo
     @ManyToOne

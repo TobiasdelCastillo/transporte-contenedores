@@ -26,7 +26,7 @@ class Estadia {
     // FK a deposito
     @ManyToOne
     @JoinColumn(name = "deposito_id")
-    private Deposito deposito;
+    private Long deposito;
 
     // FK a contenedor
     @ManyToOne

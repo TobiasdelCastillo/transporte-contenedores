@@ -32,7 +32,7 @@ public class Solicitud {
     // FK a cliente
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    private Long cliente;
 
     private String estado;
 
