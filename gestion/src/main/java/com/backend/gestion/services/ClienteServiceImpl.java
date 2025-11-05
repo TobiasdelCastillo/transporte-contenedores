@@ -2,13 +2,22 @@ package com.backend.gestion.services;
 
 import org.springframework.stereotype.Service;
 import com.backend.gestion.services.interfaces.ClienteService;
+import com.backend.gestion.entities.Cliente;
+import com.backend.gestion.repositories.ClienteRepository;
+import java.util.List;
 
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
-    private final ClienteServiceImpl clienteServiceImpl;
+    private final ClienteRepository clienteRepository;
 
+    public ClienteServiceImpl(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
 
-    
+    @Override
+    public List<Cliente> getAllClientes() {
+        return clienteRepository.findAll();
+    }
 }
