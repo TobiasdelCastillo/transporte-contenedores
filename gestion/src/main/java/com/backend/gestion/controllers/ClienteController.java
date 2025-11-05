@@ -3,13 +3,15 @@ package com.backend.gestion.controllers;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.backend.gestion.entities.Cliente;
 import com.backend.gestion.services.interfaces.ClienteService;
 
+
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/api/v1/gestion/cliente")
 public class ClienteController {
     
     private final ClienteService service;
@@ -23,5 +25,10 @@ public class ClienteController {
         return ResponseEntity.ok(service.getAllClientes());
     }
 
+    @PostMapping
+    public ResponseEntity<Cliente> createCliente(Cliente cliente) {
+        return ResponseEntity.ok(service.createCliente(cliente));
+    
+    }
     
 }
